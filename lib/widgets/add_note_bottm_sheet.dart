@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:note_app_local_db/widgets/custom_text_filed.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -11,20 +11,9 @@ class AddNoteBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Title',
-              border: OutlineInputBorder(),
-            ),
-          ),
+          CustomTextFiled(hint: "Title"),
           SizedBox(height: 10),
-          TextField(
-            maxLines: 5,
-            decoration: InputDecoration(
-              labelText: 'Description',
-              border: OutlineInputBorder(),
-            ),
-          ),
+          CustomTextFiled(hint: "Description", maxLines: 5),
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
