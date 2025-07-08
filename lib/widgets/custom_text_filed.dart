@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFiled extends StatelessWidget {
-  const CustomTextFiled({super.key, required this.hint, this.maxLines = 1});
+  const CustomTextFiled({super.key, this.maxLines = 1, required this.hintText});
 
-  final String hint;
+  final String hintText;
 
   final int maxLines;
 
@@ -12,8 +12,7 @@ class CustomTextFiled extends StatelessWidget {
     return TextField(
       maxLines: maxLines,
       decoration: InputDecoration(
-        hintText: hint,
-        labelText: 'Description',
+        hintText: hintText,
         border: OutlineInputBorder(),
       ),
     );

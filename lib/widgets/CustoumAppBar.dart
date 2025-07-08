@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:note_app_local_db/widgets/custoum_icon_search.dart';
 
 class CustoumAppBar extends StatelessWidget {
-  const CustoumAppBar({super.key});
+  const CustoumAppBar({super.key, required this.title, required this.icon});
+  final String title;
+  final IconData icon; // default icon
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class CustoumAppBar extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "Notes",
+            title, // varaibale title
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -21,7 +23,7 @@ class CustoumAppBar extends StatelessWidget {
 
           Spacer(),
 
-          CustoumIconSearch(),
+          CustoumIcon(icon: icon),
         ],
       ),
     );

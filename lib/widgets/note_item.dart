@@ -28,7 +28,20 @@ class NoteItem extends StatelessWidget {
                     color: Colors.blueAccent,
                   ),
                 ),
-                Spacer(),
+                Spacer(flex: 1),
+                IconButton(
+                  icon: Icon(Icons.edit, color: Colors.orangeAccent),
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/editNote',
+                      arguments: {
+                        'title': "Card Title",
+                        'description': "This is a description of the note.",
+                      },
+                    );
+                  },
+                ),
                 IconButton(
                   icon: Icon(Icons.delete, color: Colors.redAccent),
                   onPressed: () {
@@ -41,7 +54,11 @@ class NoteItem extends StatelessWidget {
             // Description
             Text(
               "This is a description of the note. It can be a few lines long and gives more detail about the note content.",
-              style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.4),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black87,
+                height: 1.4,
+              ),
             ),
             SizedBox(height: 18),
             // Date at bottom right
